@@ -1,0 +1,206 @@
+RestRating can use google places api for getting list of nearby restaurants    
+Also we can use containerization for the constituent userService, ratingService where each of these will be independent springboot projects   
+Where I can also speak about the design patterns other than this one    
+mysql port = 3306  
+gpt - UI libraries in various langs    
+swing framework for RestRating UI ??  
+Capital params should not be a prob  
+//Below commands should run on CLI ??  
+ 
+//636789 
+html templates 4 Thymeleaf -> /templates   
+Otherwise when you do not want any  
+
+ cd hybernateheadlines/hybernateheadlines/hybernate-head-lines/src/main/java/com/example 
+ cd hybernateheadlines/hybernateheadlines/hybernate-head-lines/ 
+
+When mvnw n mvnw.cmd scripts are not present ; this cmd shall create it along with an mvn folder containing the wrapper jar file First run the wrapper generation command 
+mvn wrapper:wrapper 
+
+Run (I think I used Maven for my project) - 
+     mvn spring-boot : run 
+     this will start spring boot app n u can access it via the browser at localhost: port  
+Else u can run jar the file provided its built 
+    java -jar folder/name.jar 
+
+NOTES 
+annotation @JsonProperty("source") tells the json handling java library Jackson that it needs to parse/marshal/ map the json field source with the entity NewsArticle's attribute source 
+Seemingly the pom.xml file is the package manager for my springboot application 
+It contains information regarding the project such as its dependencies which can be downloaded for the project upon getting cloned from github 
+
+pom.xml has bugs even after placing the below build tags n constituents  
+
+TODO left 
+o haven't coded the getters and setters for published_at for NewsArticle and source entities  
+o by the way hybernate integration is still pending and to work mysql/postgres(docker official image shall be required )  if not then hosted service like ____ ? 
+o second project need or needlessness for not using MongoDB. k lets just forget about that stick to mysql for the time being lets look at what's left in terms of the intv Q 
+o firebase instead of mysql ?? Well that's what gpt said for rest rating app  
+o Redis for placing it in front of MySQL database for resume section of second project then saying wanna explore memcache as part of updates 
+o Cloud in cloud native meaning if k8s is then similarly I want to work with more cloud native applications as per my college interest
+COMMON U kNOW u can answer the questions 
+Docker because u did not wanted to have the software installed locally also it would have helped production at vercel, netlify (really how though gpt) 
+other reasons mention somewhere 
+o Core java questions 
+o Advance Java PLUS springboot interview questions 
+o Solid interview questions 
+o revision of all design patterns known to you 
+o networking questions - gpt cloud command vs spar 
+o Go Lang interview questions 
+o Docker interview questions 
+
+
+if api ey doesn't wor then - 4f744766b3635d8d32d78c4595226c1d
+
+
+DOUBTS 
+MongoDB cloud for mongoDB then what should be done for MySQL ? 
+Container the only method ? 
+For local backend development on laptop -> sql db  Locally hosted or cloud hosted 
+How do we integrate this NewsArticleRepository interface with this mysql db to perform crud operations  
+si it that saveAll() method is 
+service files have classes but repository file happens to be an interface why so ?  
+Do custom query methods to find articles will reduce the scope for sql querries ? 
+should we keep multiple sql queries in the same file ?  
+the pom.xml file had this instead of mysql-connector-java 
+  			<groupId>com.mysql</groupId>
+			<artifactId>mysql-connector-j</artifactId>
+			<scope>runtime</scope>
+Is there a particular reason for not using json property  annotations in the news article class ? I thought we will be using jackson then and there 
+Why is it that the NewsArticleRepository interface has no method signatures ?  
+I had @AutoWired in the NewsController previously what could be its purpose ?
+NewsService-> String url had &countries=us why not as for asia if not India  
+Scope for lambda function within NewsService
+
+
+
+HYBERNATE CHALLENGES 
+concurrency bug as used in the project 
+(this isn't a valid error) absence of the  data in application.properties  Considering the below data 
+
+  spring.datasource.url=jdbc:mysql://localhost:3306/your_database
+  spring.datasource.username=your_username
+  spring.datasource.password=your_password
+  spring.jpa.hibernate.ddl-auto=update
+
+
+UPDATES for hybernate headlines 
+some different possible design pattern 
+Some different use case of springboot or hybernate 
+some different multi-threading library depending on the use case ?? 
+
+PENDING - well hybernate ends up being default jpa provider for the persistence layer  
+RDS integration with springboot project's application.properties ?? 
+we can use hybernate session object if needed for resume xyz  
+if we can create a release of headlines with docker then there's no problem including jenkins(TODO.txt for CI/CD) in AWS  
+that way we can avoid kubernetes , istio , service discovery n 
+TODO Resume 
+xyz for usage of  java 
+xyz for summary 
+xyz for springboot 
+xyz for usage of docker 
+xyz for 
+
+I HyberHeadLines 
+  hybernate for lazy loading of news article only when image/news headline is clicked -> readMore -> data for user history created    
+  Hybernate various other use cases for updates in the chat 
+  career catastrophe gpt -New chat concerning this project's discussion  
+1 springboot 
+2 design patterns integration with existing code architecture (well we do have entities though)
+J unit or Mockito can be used 
+Otherwise UI testing statement which might attract testing questions (lets stick to unit testing ) 
+Jackson library for parsing 
+3 hybernate 
+I know springboot also supports microservices then exactly how do I integrate mvc design pattern to this project ?  
+Docker 
+Even if docker is being used where is the mysql database ? IInd container right ?
+because u don't want to install software locally BUT on aws it was RDS ?? 
+So still containers will require to communicate with one another   
+We can keep k8s as the update instead of docker networking 
+on AWS it was RDS 
+Jenkins - terminology for branch specific commit-sensitive CI/CD pipeline   
+AWS 
+Then we can simply say I wanna work with k8s 
+Besides u know that guy was showing him the github repo and not the project (supposedly)  
+Auth 
+4 service discovery 
+II 
+1. 
+2. Design patterns used 
+3. MySQL / FireBase 
+4. Multi-threading 
+
+usage for hybernate is also absent but scope is somehow possible 
+Relationships:
+User and ClickHistory:
+
+Relationship: One-to-Many
+Reason: A user can click on multiple links, but each click is tied to a single user.
+Implementation: The ClickHistory table will have a user_id as a foreign key.
+ClickHistory and NewsArticle:
+
+Relationship: Many-to-One (optional)
+Reason: Multiple users might click the same article, but each click corresponds to a single article.
+Implementation: The ClickHistory table could have an optional article_id as a foreign key to the NewsArticle table.
+NewsArticle:
+
+Stored for reference but fetched from the API. A NoSQL database would require significant adjustments if relational dependencies like these existed.
+
+Why Not NoSQL?
+Denormalization:
+
+NoSQL databases like MongoDB require denormalized data. For example, the user's click history might have to store all article details redundantly, increasing storage needs and making updates more complex.
+Complex Queries:
+
+Fetching relational data (e.g., all clicks by a user) in NoSQL involves complex operations, while SQL offers simple joins and foreign key relationships.
+No Strong Schema:
+
+The lack of a fixed schema in NoSQL can lead to inconsistencies in your structured data.
+
+Structured Data:
+
+Relational databases like MySQL handle structured data with predefined schemas, which is suitable for your project where entities like User, ClickHistory, and NewsArticle have clearly defined attributes.
+Relationships:
+
+The project involves clear relationships between entities (e.g., one-to-many, many-to-one). RDBMS systems handle relationships and constraints (foreign keys) efficiently, ensuring data consistency.
+ACID Compliance:
+
+MySQL ensures Atomicity, Consistency, Isolation, and Durability. This is critical for operations like saving click history or user data to avoid inconsistencies during transactions.
+Querying:
+
+Complex queries, such as fetching all click history for a user or linking articles clicked by users, are easier with SQL compared to NoSQL systems, which might require denormalized data or complex aggregation pipelines.
+Data Consistency:
+
+If you need to ensure strict consistency (e.g., tracking user clicks and their corresponding articles), RDBMS systems excel in scenarios where relationships must be maintained.
+Normalization:
+
+MySQL allows normalization to minimize data redundancy. For instance, articles can be stored once and referenced in ClickHistory via foreign keys, reducing storage overhead.
+
+aws community alias for 
+https://awsdevchallenge.devpost.com/register
+12Nov2024 7:50 pm here comes the light By the way may be you can attend VIRTUAL hackathons for skill(confidence) enhancement   
+TODO doubts 
+o the apiUrl confusion concerning mediaStack with gpt logic 
+o NewsArticle entity did not have a constructor(-> would have gone with an interface instead ?) 
+o My NewsResponse class was inside of the model folder n there is this NewsController class too 
+o why can't String private attributes of a class be final ? 	
+	definitely has something to do with wrapper classes as it was faced the same way with the Long id too  
+o Also why can't I have private final adjectives within a public method signature of my class 4 the instantiation RestTemplate restTemplate = new RestTemplate();  
+
+Without Cloud eks orchestration of  containerized java (springboot?) microservices can we establish inter-communication b/t them  if possible then we can avoid https/grpc as a whole 
+apart from manifest files n Dockerfile 2
+How to integrate design patterns with CRUD commands ? Command design pattern with so n so u no 
+
+SwingBuzz - 51c85e43-f8f9-4b00-a548-402b9b744acf
+api test playground - https://cricketdata.org/member-test.aspx
+sample guide - https://cricketdata.org/how-to-use-cricket-data-api.aspx
+sample codes - https://cricketdata.org/samples-for-cricket-data-api.aspx
+
+Recommended Choice
+For a Cricket API aggregator, MySQL is typically a good choice if:
+
+Your data structure is fairly predictable, with entities like matches, players, teams, and statistics.
+You need reliable transactions or ACID compliance for consistent data updates.
+However, MongoDB could be useful if:
+
+You expect a lot of variability in data schemas or want to minimize up-front data modeling.
+You want flexibility in scaling horizontally and handling nested documents.
