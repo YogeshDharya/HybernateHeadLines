@@ -1,4 +1,4 @@
-package com.example.entities;
+package com.entities;
 import javax.annotation.processing.Generated;
 
 import org.springframework.data.annotation.Id;
@@ -8,12 +8,14 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import jakarta.persistence.Entity;
 
 @Entity
+@Table(name = "news")//??
 public class NewsArticle{
     @Id 
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  Long id; 
 
-    @JsonProperty("title")
+    @JsonProperty("title")//??
+    @Column(name="title")
     private  String title; 
 
     @JsonProperty("description")
