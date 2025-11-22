@@ -17,14 +17,11 @@ public class NewsService{
     private String apiKey;
     @Value("${mediastack.api.base.url}")
     private String baseUrl  ;
-    private final RestTemplate restTemplate;
-    private final NewsArticleRepository repository;
-    //TODO
-    //below constructor params r gpt invisible  
-    public NewsService(RestTemplateBuilder restTemplateBuilder , NewsArticleRepository newRepository){
-        this.repository=newRepository;
-        this.restTemplate = restTemplateBuilder;
-    }
+    @Autowired
+    private RestTemplate restTemplate;
+    @Autowired
+    private NewsArticleRepository repository;
+
     public List<NewsArticle> fetchNews(){
          RestTemplate restTemplate = new RestTemplate();
         String url = baseUrl + apiKey + "&countries=us";

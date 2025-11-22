@@ -1,8 +1,8 @@
 FROM openjdk:17-jdk-slim
 
-LABEL maintainer="yogeshdharya@example.com"
+LABEL maintainer="yogeshdharya@gmail.com"
 LABEL version="1.0"
-LABEL description="Dockerfile for Hybernate Head Lines "
+LABEL description="Dockerfile for Hybernate Head Lines Spring Boot Application"
 
 WORKDIR /app
 

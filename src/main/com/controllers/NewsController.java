@@ -13,8 +13,8 @@ public class NewsController {
     //@Autowired
     private NewsService newsService ;
     
-    // @Autowired
-    // private PersistenceService persistenceService;
+    @Autowired
+    private PersistenceService persistenceService;
     
     @RequestMapping("api/news")
     public List<NewsArticle> fetchAndSaveNews(){
@@ -22,8 +22,4 @@ public class NewsController {
         persistenceService.saveNewsArticle(articles);
         return articles;
     }
-    // public NewsController(NewsService myNewsService,PersistenceService myPersistenceService){
-    //     this.newsService = myNewsService;
-    //     this.persistenceService = myPersistenceService;
-    // }
 }

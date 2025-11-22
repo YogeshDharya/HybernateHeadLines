@@ -89,6 +89,9 @@ Some different use case of springboot or hybernate
 some different multi-threading library depending on the use case ?? 
 
 PENDING - well hybernate ends up being default jpa provider for the persistence layer  
+The new bullet points added require
+  manifests for prometheus and grafana 
+  
 RDS integration with springboot project's application.properties ?? 
 we can use hybernate session object if needed for resume xyz  
 if we can create a release of headlines with docker then there's no problem including jenkins(TODO.txt for CI/CD) in AWS  
